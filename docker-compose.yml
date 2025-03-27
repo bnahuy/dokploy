@@ -3,6 +3,7 @@ version: "3.9"
 services:
   wordpress:
     image: wordpress:php8.1-apache
+    command: sh -c "sleep 180 && docker-entrypoint.sh apache2-foreground"
     environment:
       WORDPRESS_DB_HOST: db
       WORDPRESS_DB_USER: wordpress
