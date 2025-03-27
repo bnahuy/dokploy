@@ -11,6 +11,11 @@ services:
       WORDPRESS_SITE_URL: http://172.16.10.21:8889
     volumes:
       - wordpress_data:/var/www/html
+    logging:
+      driver: json-file
+      options:
+        max-size: "200m"
+        max-file: "3"
 
   db:
     image: mysql:5.7
